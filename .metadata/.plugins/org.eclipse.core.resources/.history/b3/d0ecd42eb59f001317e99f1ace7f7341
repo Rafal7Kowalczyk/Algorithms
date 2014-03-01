@@ -1,0 +1,36 @@
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+import junit.framework.TestCase;
+
+public class StacksTest extends TestCase {
+
+
+	public void testPush() {
+		Stacks stacks = new Stacks(20);
+		stacks.push(10);
+		assertEquals(10, stacks.tab[0]);
+		stacks.push(20);
+		assertEquals(10, stacks.tab[1]);
+	}
+
+	
+	public void testTop() {
+		Stacks stacks1 = new Stacks(25);
+		
+		
+	}
+
+
+	public void testPop() {
+		Stacks stacks1 = new Stacks(30);
+		stacks1.pop();
+		//assertEquals();
+	}
+
+	
+	public void testMax() {
+		
+	}
+
+}

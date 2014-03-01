@@ -1,0 +1,33 @@
+
+public class Bracket extends Stacks {
+	 
+	public Bracket(int rozmiar) {
+		super(rozmiar);
+	}
+	void nawiasyOK(String wyr){
+		for(int i=0; i<wyr.length(); i++){
+			if(wyr.charAt(i)=='(' || wyr.charAt(i)=='[' || wyr.charAt(i)=='{' )
+				super.push(wyr.charAt(i));
+			else if(wyr.charAt(i)==')'){
+				if(super.top()=='(')
+				super.pop();
+				else System.out.println("false");
+			}
+			else if(wyr.charAt(i)==']'){
+				if(super.top()=='[')
+					super.pop();
+					else System.out.println("false");
+			}
+			else if(wyr.charAt(i)=='}'){
+				if(super.top()=='{')
+					super.pop();
+					else System.out.println("false");
+			}
+		}
+		if(super.top()!=0)
+			System.out.println("false");
+	}
+	
+	
+	
+}

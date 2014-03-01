@@ -1,0 +1,45 @@
+
+public class Bracket extends Stacks {
+	int glzagniezdzenia = 0;
+	public Bracket(int rozmiar) {
+		super(rozmiar);
+	}
+	boolean nawiasyOK(String wyr){
+		// if(true){
+		//}		glzagniezdzeniaSystem.out.println("true");else false
+
+		for(int i=0; i<wyr.length(); i++){
+			if(wyr.charAt(i)=='(' || wyr.charAt(i)=='[' || wyr.charAt(i)=='{' )
+				super.push(wyr.charAt(i));
+			else if(wyr.charAt(i)==')'){
+				if(super.top()=='(')
+				super.pop();
+				else System.out.println("0");
+			}
+			else if(wyr.charAt(i)==']'){
+				if(super.top()=='[')
+					super.pop();
+					else System.out.println("0");
+			}
+			else if(wyr.charAt(i)=='}'){
+				if(super.top()=='{')
+					super.pop();
+					else System.out.println("0");
+			}
+		}
+		if(super.top()!=0)
+			System.out.println("false");
+		//
+		return true;
+		
+	}
+	void zagniezdzenie(String wyr){
+		if(nawiasyOK(wyr)){
+	for(int i=0; i<wyr.length(); i++){
+		if(wyr.charAt(i)=='(')
+			
+			glzagniezdzenia	++;
+			}
+	}
+	}
+}

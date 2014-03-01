@@ -1,0 +1,48 @@
+public class Stacks implements Stack {
+	int[] tab;
+	int rozmiar;
+	int wskaznik = -1;
+
+	public Stacks(int rozmiar) {
+		this.rozmiar = rozmiar;
+		tab = new int[rozmiar];
+	}
+
+	public void push(int value) {
+		if (wskaznik < rozmiar) {
+			tab[wskaznik] = value;
+
+		} else {
+			int[] tab1 = new int[2 * rozmiar];
+			for (int i = 0; i < wskaznik; i++) {
+				tab1[i] = tab[i];
+				tab1[wskaznik] = value;
+
+			}
+		}
+		wskaznik++;
+
+	}
+
+	public int top() {
+
+		return tab[wskaznik];
+	}
+
+	public void pop() {
+		if (wskaznik >= 0)
+			wskaznik--;
+		else
+			System.out.println("Na stosie nic juz nie ma");
+	}
+
+	public int max() {
+		int max = -1;
+		for (int i = 0; i < tab.length; i++)
+			if (tab[i] > max)
+				max = tab[i];
+
+		return max;
+	}
+
+}

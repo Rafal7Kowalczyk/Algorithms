@@ -1,0 +1,11 @@
+public interface Stack {
+
+	public void push(String value);
+
+	public int top();
+
+	public void pop();
+
+	public int max();
+
+}

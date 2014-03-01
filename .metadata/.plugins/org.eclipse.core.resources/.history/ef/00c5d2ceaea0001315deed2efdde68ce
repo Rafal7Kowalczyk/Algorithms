@@ -1,0 +1,38 @@
+import java.util.ArrayList;
+
+
+public class StackOnList<T> {
+	
+	private ArrayList<T> list = new ArrayList<T>();
+
+
+	public void push(T value) {
+		
+
+	}
+
+
+	public int top() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+  
+	public void pop() {
+		// TODO Auto-generated method stub
+
+	}
+
+	
+	public int max() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	
+	public int liczbaelnastosie() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+}

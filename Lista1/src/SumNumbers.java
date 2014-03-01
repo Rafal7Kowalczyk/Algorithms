@@ -1,0 +1,41 @@
+import java.io.*;
+
+public class SumNumbers {
+	int maxsumacyfr = 0;
+	String[] tmp = null;
+	int wielkosctablicy;
+	int[] tab;
+
+	public SumNumbers(int wielkosctablicy) {
+		this.wielkosctablicy = wielkosctablicy;
+		tab = new int[wielkosctablicy];
+	}
+
+	public void tablica() throws IOException {
+		BufferedReader buffer = new BufferedReader(new InputStreamReader(
+				System.in));
+		tmp = buffer.readLine().split(" ");
+		for (int i = 0; i < tmp.length; i++)
+			tab[i] = Integer.parseInt(tmp[i]);
+
+	}
+
+	public void sum(int iloscCyfr) {
+		int sumacyfr = 0;
+		int i = 0;
+		while (i <=tmp.length-iloscCyfr) {
+			for(int j=i; j<i+iloscCyfr;j++)
+				sumacyfr+=tab[j];
+			if (sumacyfr > maxsumacyfr)
+				maxsumacyfr = sumacyfr;
+			i++;
+			sumacyfr=0;
+		}
+		System.out.println("Maksymalna suma cyfr " + maxsumacyfr);
+	}
+	public static void main(String args[]) throws IOException{
+		SumNumbers st = new SumNumbers(30);
+		st.tablica();
+		st.sum(3);
+	}
+}
